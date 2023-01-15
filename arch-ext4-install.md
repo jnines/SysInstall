@@ -1,4 +1,26 @@
-#### Format
+### Basics
+
+```
+ls /sys/firmware/efi/efivars
+&&
+ping -c 1 google.com
+&&
+passwd
+```
+
+##### SSH in if available
+
+```
+reflector --country US --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
+&&
+timedatectl set-ntp true
+&&
+sed -i "/ParallelDownloads/s/^#//" /etc/pacman.conf
+&&
+pacman -Syy
+```
+
+### Format
 
 ```
 lsblk -o name,fssize,fstype,mountpoint,uuid,model
@@ -17,7 +39,7 @@ mkdir /mnt/boot
 mount /dev/***?1 /boot
 ```
 
-#### Pacstrap
+### Pacstrap
 
 ```
 pacstrap /mnt archlinux-keyring base base-devel neovim rsync openssh reflector git
@@ -121,7 +143,7 @@ umount -a
 reboot
 ```
 
-#### Post install
+### Post install
 
 ```
 mkdir $HOME/.local/bin/git

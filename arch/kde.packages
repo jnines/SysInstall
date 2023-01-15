@@ -43,7 +43,7 @@ xdotool
 xorg-server
 xorg-server-devel
 xorg-util-macros
-xorg-wayland
+xorg-xwayland
 xorg-xev
 xorg-xhost
 xorg-xinit

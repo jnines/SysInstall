@@ -1,0 +1,12 @@
+disable-c6-systemd
+fancontrol-gui-git
+gwe
+it87-dkms-git
+libva-nvidia-driver
+modprobed-db
+qimgv
+qt5-apng-plugin
+tmuxinator
+ttf-ms-fonts
+ttf-vista-fonts
+zenstates-git

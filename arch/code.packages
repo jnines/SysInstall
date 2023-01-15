@@ -1,0 +1,16 @@
+eslint_d
+flake8
+hq
+lazygit
+luacheck
+meld
+nodejs
+php
+prettier
+python-black
+python-pip
+rust
+shellcheck
+shfmt
+texinfo
+xmlstarlet

@@ -1,5 +1,5 @@
-bluedevil 
-breeze-gtk 
+bluedevil
+breeze-gtk
 colord-kde
 dolphin
 ffmpegthumbs
@@ -40,7 +40,7 @@ spectacle
 xclip
 xdg-desktop-portal-kde
 xdotool
-xorg-server 
+xorg-server
 xorg-server-devel
 xorg-util-macros
 xorg-wayland

@@ -4,18 +4,17 @@
 ls /sys/firmware/efi/efivars
 ping -c 1 google.com
 passwd
+pacman -Syy
+pacman -S git --noconfirm
 ip a
 ```
 
 ##### SSH in if available
 
 ```
-reflector --country US --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
-&&
-timedatectl set-ntp true
-&&
-sed -i "/ParallelDownloads/s/^#//" /etc/pacman.conf
-&&
+reflector --country US --latest 5 --sort rate --save /etc/pacman.d/mirrorlist &&
+timedatectl set-ntp true &&
+sed -i "/ParallelDownloads/s/^#//" /etc/pacman.conf &&
 pacman -Syy
 ```
 
@@ -41,42 +40,32 @@ mount /dev/***?1 /boot
 ### Pacstrap
 
 ```
-pacstrap /mnt archlinux-keyring base base-devel neovim rsync openssh reflector git
-&&
-genfstab -U /mnt >> /mnt/etc/fstab
-&&
-cat /mnt/etc/fstab
-&&
-mkdir -p /mnt/remove
-&&
-git clone https://github.com/jnines/installs.git /mnt/remove
-&&
+pacstrap /mnt archlinux-keyring base base-devel neovim rsync openssh reflector git &&
+genfstab -U /mnt >> /mnt/etc/fstab &&
+cat /mnt/etc/fstab &&
+mkdir -p /mnt/remove &&
+git clone https://github.com/jnines/SysInstall.git /mnt/remove &&
 arch-chroot /mnt
 ```
 
 ```
-ln -sf /usr/share/zoneinfo/America/Chigaco /etc/localtime
-&&
-hwclock --systohc
-&&
-reflector --country US --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
-&&
-echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen
-&&
-locale-gen
-&&
-echo 'LANG=en_US.UTF-8' > /etc/locale.conf
-&&
-echo 'archbox' > /etc/hostname
-&&
-echo "127.0.0.1   localhost\n::1         localhost\n127.0.1.1   archbox.lan archbox" >> /etc/hosts
-&&
-passwd
-&&
-nvim /etc/pacman.conf
+ln -sf /usr/share/zoneinfo/America/Chigaco /etc/localtime &&
+hwclock --systohc &&
+reflector --country US --latest 5 --sort rate --save /etc/pacman.d/mirrorlist &&
+echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen &&
+locale-gen &&
+echo 'LANG=en_US.UTF-8' > /etc/locale.conf &&
+echo 'archt' > /etc/hostname &&
+echo "127.0.0.1   localhost
+::1         localhost
+127.0.1.1   archbox.lan archbox" >> /etc/hosts &&
+passwd &&
+nvim /etc/pacman.conf &&
+pacman -Syy &&
+cd /remove/arch || exit
 ```
 
-- Change
+- Change in pacman.conf
   > NoExtract=usr/lib/security/pam_systemd_home.so
 - Uncomment
   > Color
@@ -86,12 +75,6 @@ nvim /etc/pacman.conf
   > ILoveCandy
   > [multilib]
   > Include = /etc/pacman.d/mirrorlist
-
-```
-pacman -Syy
-&&
-cd /remove/arch || exit
-```
 
 `pacman -S --needed - < ` #PackageLists from /remove/arch/
 
@@ -109,7 +92,7 @@ nvim /boot/EFI/refind/refind.conf
 > scanfor manual
 > dont_scan_volumes "Recovery HD",Data,Win,Home,Root,1TB,"Microsoft reserved partition"
 > fold_linux_kernels false
-> default_selection "TKG"
+> default_selection "Arch"
 
 ```
 menuentry "Arch" {
@@ -125,50 +108,35 @@ menuentry "Arch" {
 ```
 
 ```
-useradd -mg users -G wheel -s /bin/zsh jason
-&&
-passwd jason
-&&
-export EDITOR=nvim
-&&
-visudo #(uncomment wheel)
-&&
-systemctl enable NetworkManager bluetooth sddm rngd fstrim.timer updatedb.timer cups cronie avahi-daemon.service
-&&
-exit
-&&
-umount -a
-&&
+useradd -mg users -G wheel -s /bin/zsh jason &&
+passwd jason &&
+export EDITOR=nvim &&
+visudo &&
+systemctl enable NetworkManager bluetooth sddm rngd fstrim.timer updatedb.timer cups cronie avahi-daemon.service &&
+exit &&
+umount -a &&
 reboot
 ```
 
 ### Post install
 
 ```
-mkdir $HOME/.local/bin/git
-&&
-git clone https://aur.archlinux.org/yay-bin.git $HOME/.local/bin/git/
-&&
-(cd $HOME/.local/bin/git/yay-bin && makepkg -si)
-&&
+mkdir $HOME/.local/bin/git &&
+git clone https://aur.archlinux.org/yay-bin.git $HOME/.local/bin/git/ &&
+(cd $HOME/.local/bin/git/yay-bin && makepkg -si) &&
 cd /remove/aur
 ```
 
 `yay -S - < ` #PackageLists from /remove/aur/
 
 ```
-rm -r /remove
-&&
-exit
+sudo rm -r /remove &&
 ```
 
 ```
-mkdir -p $HOME/.local/bin/git/tkg
-&&
-git clone --separate-git-dir="$HOME"/.local/bin/git/dotfiles https://github.com/jnines/dotfiles.git "$HOME"/.local/bin/git/dotf
-&&
-git clone https://github.com/Frogging-Family/linux-tkg.git $HOME/.local/bin/git/tkg/
-&&
+mkdir -p $HOME/.local/bin/git/tkg &&
+git clone --separate-git-dir="$HOME"/.local/bin/git/dotfiles https://github.com/jnines/dotfiles.git "$HOME"/.local/bin/git/dotf &&
+git clone https://github.com/Frogging-Family/linux-tkg.git $HOME/.local/bin/git/tkg/ &&
 git clone https://github.com/Frogging-Family/nvidia-all.git $HOME/.local/bin/git/tkg/
 ```
 

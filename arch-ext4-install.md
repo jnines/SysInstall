@@ -5,8 +5,8 @@ lsblk -o name,fssize,fstype,mountpoint,uuid,model
 cfdisk
 ```
 
-- ==EFI partition 500MB - 2GB==
-- ==/ partition remaining==
+- EFI partition 500MB - 2GB
+- / partition remaining
 
 ```
 mkfs.vfat -n BOOT /dev/***?1
@@ -55,9 +55,9 @@ passwd
 nvim /etc/pacman.conf
 ```
 
-- ==Change==
+- Change
   > NoExtract=usr/lib/security/pam_systemd_home.so
-- ==Uncomment==
+- Uncomment
   > Color
   > CheckSpace
   > VerbosePkgLists

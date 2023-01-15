@@ -2,10 +2,9 @@
 
 ```
 ls /sys/firmware/efi/efivars
-&&
 ping -c 1 google.com
-&&
 passwd
+ip a
 ```
 
 ##### SSH in if available

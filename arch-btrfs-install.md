@@ -186,7 +186,10 @@ nvim /etc/snapper/configs/home
 
 > PRUNENAMES = ".snapshots"
 
-`nvim /etc/systemd/system/timers.target.wants/snapper-cleanup.timer`
+```zsh
+systemctl enable --now snapper-timeline.timer snapper-cleanup.timer &&
+nvim /etc/systemd/system/timers.target.wants/snapper-cleanup.timer
+```
 
 > OnUnitActiveSec=1h
 

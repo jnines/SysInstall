@@ -2,6 +2,7 @@ disable-c6-systemd
 fancontrol-gui-git
 gwe
 it87-dkms-git
+libpng-apng
 libva-nvidia-driver
 modprobed-db
 qimgv

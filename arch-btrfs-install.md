@@ -175,8 +175,8 @@ nvim /etc/snapper/configs/root &&
 nvim /etc/snapper/configs/home
 ```
 
-> ALLOW_GROUPS="wheel"
-> NUMBER_LIMIT="10"
+> ALLOW_GROUPS="wheel"  
+> NUMBER_LIMIT="10"  
 > Change TIMELINE\*\*
 
 `nvim /etc/updatedb.conf`

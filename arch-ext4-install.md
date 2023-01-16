@@ -78,7 +78,8 @@ cd /remove/arch || exit
   > [multilib]
   > Include = /etc/pacman.d/mirrorlist
 
-`pacman -S --needed - <` #PackageLists from /remove/arch/
+`pacman -S --needed - <`
+PackageLists from /remove/arch/
 
 ### Refind
 

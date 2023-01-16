@@ -150,7 +150,7 @@ reboot
 ## Post install
 
 ```zsh
-mkdir $HOME/.local/bin/git &&
+mkdir -p $HOME/.local/bin/git &&
 git clone https://aur.archlinux.org/yay-bin.git $HOME/.local/bin/git/ &&
 (cd $HOME/.local/bin/git/yay-bin && makepkg -si) &&
 cd /remove/aur

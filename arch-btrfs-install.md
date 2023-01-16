@@ -48,12 +48,14 @@ umount /mnt
 
 mount -o compress=zstd:1,noatime,subvol=@ /dev/***?2 /mnt
 
-mkdir -p /mnt/{/boot,/home,/opt/games,/.snapshots,/var/log,/var/lib/libvrt/images}
+mkdir -p /mnt/{/boot,/home,/.snapshots,/opt/games,/var/cache,/var/log,/var/lib/flatpak,/var/lib/libvrt/images}
 
 mount -o compress=zstd:1,noatime,subvol=@home /dev/***?2 /mnt/home
-mount -o compress=zstd:1,noatime,subvol=@games /dev/***?2 /mnt/opt/games
 mount -o compress=zstd:1,noatime,subvol=@snapshots /dev/***?2 /mnt/.snapshots
+mount -o compress=zstd:1,noatime,subvol=@games /dev/***?2 /mnt/opt/games
+mount -o compress=zstd:1,noatime,subvol=@cache /dev/***?2 /mnt/var/cache
 mount -o compress=zstd:1,noatime,subvol=@log /dev/***?2 /mnt/var/log
+mount -o compress=zstd:1,noatime,subvol=@flatpak /dev/***?2 /mnt/var/lib/flatpak
 mount -o compress=zstd:1,noatime,subvol=@vm /dev/***?2 /mnt/var/lib/libvrt/images
 
 mount /dev/***?1 /mnt/boot
@@ -167,7 +169,7 @@ snapper -c home create-config /home &&
 btrfs su del /.snapshots &&
 mkdir /.snapshots &&
 mount -a &&
-btrfs su ls /
+btrfs su list /
 
 btrfs su set-default 256 # Or whatever it is
 
@@ -175,8 +177,8 @@ nvim /etc/snapper/configs/root &&
 nvim /etc/snapper/configs/home
 ```
 
-> ALLOW_GROUPS="wheel"  
-> NUMBER_LIMIT="10"  
+> ALLOW_GROUPS="wheel"
+> NUMBER_LIMIT="10"
 > Change TIMELINE\*\*
 
 `nvim /etc/updatedb.conf`
@@ -200,7 +202,7 @@ git clone https://github.com/Frogging-Family/linux-tkg.git $HOME/.local/bin/git/
 git clone https://github.com/Frogging-Family/nvidia-all.git $HOME/.local/bin/git/tkg/nvidia-all
 ```
 
-[Wine](https://github.com/Frogging-Family/wine-tkg-git/actions/workflows/wine-arch.yml)  
-[SF Pro font](https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts)  
-[SauceCode Pro font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf)  
+[Wine](https://github.com/Frogging-Family/wine-tkg-git/actions/workflows/wine-arch.yml)
+[SF Pro font](https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts)
+[SauceCode Pro font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf)
 [Lvim](https://www.lunarvim.org/docs/installation)

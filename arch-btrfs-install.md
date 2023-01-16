@@ -92,12 +92,12 @@ cd /remove/arch || exit
 - Change in pacman.conf
   > NoExtract=usr/lib/security/pam_systemd_home.so etc/cron.daily/snapper etc/cron.hourly/snapper
 - Uncomment
-  > Color
-  > CheckSpace
-  > VerbosePkgLists
-  > ParallelDownloads
-  > ILoveCandy
-  > [multilib]
+  > Color  
+  > CheckSpace  
+  > VerbosePkgLists  
+  > ParallelDownloads  
+  > ILoveCandy  
+  > [multilib]  
   > Include = /etc/pacman.d/mirrorlist
 
 `pacman -S --needed - <`
@@ -161,7 +161,8 @@ cd /remove/aur
 `yay -S - <` #PackageLists from /remove/aur/
 
 ```zsh
-sudo su &&
+sudo su
+
 umount /.snapshots &&
 rm -r /.snapshots &&
 snapper -c root create-config / &&
@@ -177,8 +178,8 @@ nvim /etc/snapper/configs/root &&
 nvim /etc/snapper/configs/home
 ```
 
-> ALLOW_GROUPS="wheel"
-> NUMBER_LIMIT="10"
+> ALLOW_GROUPS="wheel"  
+> NUMBER_LIMIT="10"  
 > Change TIMELINE\*\*
 
 `nvim /etc/updatedb.conf`
@@ -202,7 +203,7 @@ git clone https://github.com/Frogging-Family/linux-tkg.git $HOME/.local/bin/git/
 git clone https://github.com/Frogging-Family/nvidia-all.git $HOME/.local/bin/git/tkg/nvidia-all
 ```
 
-[Wine](https://github.com/Frogging-Family/wine-tkg-git/actions/workflows/wine-arch.yml)
-[SF Pro font](https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts)
-[SauceCode Pro font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf)
+[Wine](https://github.com/Frogging-Family/wine-tkg-git/actions/workflows/wine-arch.yml)  
+[SF Pro font](https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts)  
+[SauceCode Pro font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf)  
 [Lvim](https://www.lunarvim.org/docs/installation)

@@ -1,6 +1,8 @@
-### Basics
+# BTRFS
 
-```
+## Basics
+
+```zsh
 ls /sys/firmware/efi/efivars
 ping -c 1 google.com
 passwd
@@ -9,18 +11,18 @@ pacman -S git --noconfirm
 ip a
 ```
 
-##### SSH in if available
+### SSH in if available
 
-```
+```zsh
 reflector --country US --latest 5 --sort rate --save /etc/pacman.d/mirrorlist &&
 timedatectl set-ntp true &&
 sed -i "/ParallelDownloads/s/^#//" /etc/pacman.conf &&
 pacman -Syy
 ```
 
-### Format
+## Format
 
-```
+```zsh
 lsblk -o name,fssize,fstype,mountpoint,uuid,model
 cfdisk
 ```
@@ -28,7 +30,7 @@ cfdisk
 - EFI partition 500MB - 2GB
 - / partition remaining
 
-```
+```zsh
 mkfs.vfat -n BOOT /dev/***?1
 mkfs.btrfs -L ROOT /dev/***?2
 
@@ -57,9 +59,9 @@ mount -o compress=zstd:1,noatime,subvol=@vm /dev/***?2 /mnt/var/lib/libvrt/image
 mount /dev/***?1 /mnt/boot
 ```
 
-### Pacstrap
+## Pacstrap
 
-```
+```zsh
 pacstrap /mnt archlinux-keyring base base-devel neovim rsync openssh reflector git &&
 genfstab -U /mnt >> /mnt/etc/fstab &&
 cat /mnt/etc/fstab &&
@@ -68,7 +70,7 @@ git clone https://github.com/jnines/SysInstall.git /mnt/remove &&
 arch-chroot /mnt
 ```
 
-```
+```zsh
 ln -sf /usr/share/zoneinfo/America/Chigaco /etc/localtime &&
 hwclock --systohc &&
 reflector --country US --latest 5 --sort rate --save /etc/pacman.d/mirrorlist &&
@@ -96,25 +98,26 @@ cd /remove/arch || exit
   > [multilib]
   > Include = /etc/pacman.d/mirrorlist
 
-`pacman -S --needed - < ` #PackageLists from /remove/arch/
+`pacman -S --needed - <`
+PackageLists from /remove/arch/
 
-### Refind
+## Refind
 
-```
+```zsh
 refind-install
 blkid ROOT
 nvim /boot/EFI/refind/refind.conf
 ```
 
-> timeout 3
-> resolution 2560 1440
-> use_graphics_for linux
-> scanfor manual
-> dont_scan_volumes "Recovery HD",Data,Win,Home,Root,1TB,"Microsoft reserved partition"
-> fold_linux_kernels false
-> default_selection "Arch"
+```zsh
+timeout 3
+resolution 2560 1440 # Pick your resolution
+use_graphics_for linux
+scanfor manual
+dont_scan_volumes "Recovery HD",Data,Win,Home,Root,1TB,"Microsoft reserved partition"
+fold_linux_kernels false
+default_selection "Arch"
 
-```
 menuentry "Arch" {
     volume   "Arch Linux"
     icon     /EFI/refind/icons/os_arch.png
@@ -127,34 +130,35 @@ menuentry "Arch" {
 }
 ```
 
-`nvim /etc/mkinitcpio.conf `
+`nvim /etc/mkinitcpio.conf`
 
 > binaries (btrfs)
 
-```
+```zsh
 mkinitcpio -p linux &&
 useradd -mg users -G wheel -s /bin/zsh jason &&
 passwd jason &&
 export EDITOR=nvim &&
 visudo &&
 systemctl enable NetworkManager bluetooth sddm rngd fstrim.timer updatedb.timer cups cronie avahi-daemon.service &&
-exit &&
+exit
+
 umount -a &&
 reboot
 ```
 
-### Post install
+## Post install
 
-```
+```zsh
 mkdir $HOME/.local/bin/git &&
 git clone https://aur.archlinux.org/yay-bin.git $HOME/.local/bin/git/ &&
 (cd $HOME/.local/bin/git/yay-bin && makepkg -si) &&
 cd /remove/aur
 ```
 
-`yay -S - < ` #PackageLists from /remove/aur/
+`yay -S - <` #PackageLists from /remove/aur/
 
-```
+```zsh
 sudo su &&
 umount /.snapshots &&
 rm -r /.snapshots &&
@@ -183,20 +187,20 @@ nvim /etc/snapper/configs/home
 
 > OnUnitActiveSec=1h
 
-```
+```zsh
 chown -R :wheel /.snapshots /home/.snapshots &&
 rm -r /remove &&
 exit
 ```
 
-```
+```zsh
 mkdir -p $HOME/.local/bin/git/tkg &&
 git clone --separate-git-dir="$HOME"/.local/bin/git/dotfiles https://github.com/jnines/dotfiles.git "$HOME"/.local/bin/git/dotf &&
 git clone https://github.com/Frogging-Family/linux-tkg.git $HOME/.local/bin/git/tkg/ &&
 git clone https://github.com/Frogging-Family/nvidia-all.git $HOME/.local/bin/git/tkg/
 ```
 
-https://github.com/Frogging-Family/wine-tkg-git/actions/workflows/wine-arch.yml
-https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts
-https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf
-https://www.lunarvim.org/docs/installation
+[Wine](https://github.com/Frogging-Family/wine-tkg-git/actions/workflows/wine-arch.yml)  
+[SF Pro font](https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts)  
+[SauceCode Pro font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf)  
+[Lvim](https://www.lunarvim.org/docs/installation)

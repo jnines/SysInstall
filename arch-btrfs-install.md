@@ -151,7 +151,7 @@ reboot
 
 ```zsh
 mkdir -p $HOME/.local/bin/git &&
-git clone https://aur.archlinux.org/yay-bin.git $HOME/.local/bin/git/ &&
+git clone https://aur.archlinux.org/yay-bin.git $HOME/.local/bin/git/yay-bin &&
 (cd $HOME/.local/bin/git/yay-bin && makepkg -si) &&
 cd /remove/aur
 ```
@@ -196,8 +196,8 @@ exit
 ```zsh
 mkdir -p $HOME/.local/bin/git/tkg &&
 git clone --separate-git-dir="$HOME"/.local/bin/git/dotfiles https://github.com/jnines/dotfiles.git "$HOME"/.local/bin/git/dotf &&
-git clone https://github.com/Frogging-Family/linux-tkg.git $HOME/.local/bin/git/tkg/ &&
-git clone https://github.com/Frogging-Family/nvidia-all.git $HOME/.local/bin/git/tkg/
+git clone https://github.com/Frogging-Family/linux-tkg.git $HOME/.local/bin/git/tkg/linux-tkg &&
+git clone https://github.com/Frogging-Family/nvidia-all.git $HOME/.local/bin/git/tkg/nvidia-all
 ```
 
 [Wine](https://github.com/Frogging-Family/wine-tkg-git/actions/workflows/wine-arch.yml)  

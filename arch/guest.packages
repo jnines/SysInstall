@@ -1,5 +1,4 @@
 spice-vdagent
-
 alacritty
 arch-wiki-lite
 ark
@@ -68,7 +67,6 @@ zsh-completions
 zsh-syntax-highlighting
 zstd
 zoxide
-
 avahi
 cups
 curl

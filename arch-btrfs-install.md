@@ -172,7 +172,7 @@ mkdir /.snapshots &&
 mount -a &&
 btrfs su list /
 
-btrfs su set-default 256 # Or whatever it is
+btrfs su set-default 256 / # Or whatever it is
 
 nvim /etc/snapper/configs/root &&
 nvim /etc/snapper/configs/home

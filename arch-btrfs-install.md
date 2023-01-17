@@ -187,8 +187,11 @@ nvim /etc/snapper/configs/home
 > PRUNENAMES = ".snapshots"
 
 ```zsh
+nvim /etc/fstab &&
 systemctl enable --now snapper-timeline.timer snapper-cleanup.timer &&
-nvim /etc/systemd/system/timers.target.wants/snapper-cleanup.timer
+nvim /etc/systemd/system/timers.target.wants/snapper-cleanup.timer &&
+refind-btrfs &&
+systemctl enable --now refind-btrfs
 ```
 
 > OnUnitActiveSec=1h

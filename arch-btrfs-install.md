@@ -48,11 +48,13 @@ umount /mnt
 
 mount -o compress=zstd:1,noatime,subvol=@ /dev/***?2 /mnt
 
-mkdir -p /mnt/{/boot,/home,/.snapshots,/opt/games,/var/cache/pacman/pkg,/var/log,/var/lib/flatpak,/var/lib/libvrt/images}
+mkdir -p /mnt/{/boot,/home,/root,/.snapshots,/opt/games,/tmp,/var/cache/pacman/pkg,/var/log,/var/lib/flatpak,/var/lib/libvrt/images}
 
 mount -o compress=zstd:1,noatime,subvol=@home /dev/***?2 /mnt/home
+mount -o compress=zstd:1,noatime,subvol=@root /dev/***?2 /mnt/root
 mount -o compress=zstd:1,noatime,subvol=@snapshots /dev/***?2 /mnt/.snapshots
 mount -o compress=zstd:1,noatime,subvol=@games /dev/***?2 /mnt/opt/games
+mount -o compress=zstd:1,noatime,subvol=@tmp /dev/***?2 /mnt/tmp
 mount -o compress=zstd:1,noatime,subvol=@cache /dev/***?2 /mnt/var/cache/pacman/pkg
 mount -o compress=zstd:1,noatime,subvol=@log /dev/***?2 /mnt/var/log
 mount -o compress=zstd:1,noatime,subvol=@flatpak /dev/***?2 /mnt/var/lib/flatpak

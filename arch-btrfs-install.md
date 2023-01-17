@@ -39,9 +39,13 @@ mount /dev/***?2 /mnt
 cd /mnt &&
 btrfs su cr @ &&
 btrfs su cr @home &&
-btrfs su cr @games &&
+btrfs su cr @root &&
 btrfs su cr @snapshots &&
+btrfs su cr @games &&
+btrfs su cr @tmp &&
+btrfs su cr @cache &&
 btrfs su cr @log &&
+btrfs su cr @flatpak &&
 btrfs su cr @vm &&
 cd / &&
 umount /mnt

@@ -196,6 +196,7 @@ nvim /etc/snapper/configs/home
 nvim /etc/fstab &&
 systemctl enable --now snapper-timeline.timer snapper-cleanup.timer &&
 nvim /etc/systemd/system/timers.target.wants/snapper-cleanup.timer &&
+snapper -c root --create -d BASE &&
 refind-btrfs &&
 systemctl enable --now refind-btrfs
 ```

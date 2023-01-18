@@ -28,13 +28,16 @@ cfdisk
 ```
 
 - EFI partition 500MB - 2GB
-- / partition remaining
+- / partition remaining -8GB
+- SWAP 8GB Unless using ZRAM
 
 ```zsh
 mkfs.vfat -n BOOT /dev/***?1
 mkfs.btrfs -L ROOT /dev/***?2
+mkswap -L SWAP /dev/***?3
 
 mount /dev/***?2 /mnt
+swapon /dev/***?3
 
 cd /mnt &&
 btrfs su cr @ &&

@@ -1,4 +1,5 @@
-qemu-desktop
 edk2-ovmf
+libguestfs
+qemu-desktop
 virt-manager
 virt-viewer

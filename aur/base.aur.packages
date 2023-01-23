@@ -1,4 +1,5 @@
 disable-c6-systemd
+downgrade
 fancontrol-gui-git
 gwe
 libpng-apng

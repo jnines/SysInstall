@@ -54,6 +54,7 @@ ntfs-3g
 p7zip
 pacman-contrib
 pacutils
+perf
 psensor
 python-pynvim
 rebuild-detector

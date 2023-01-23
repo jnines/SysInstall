@@ -31,6 +31,7 @@ mesa
 mpv
 phonon-qt5-gstreamer
 pipewire
+pipewire-alsa
 pipewire-audio
 pipewire-docs
 pipewire-jack
@@ -55,3 +56,4 @@ papirus-icon-theme
 terminus-font
 ttf-firacode-nerd
 ttf-sourcecodepro-nerd
+wireplumber

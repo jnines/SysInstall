@@ -65,7 +65,7 @@ mount -o compress=zstd:1,noatime,subvol=@tmp /dev/***?2 /mnt/tmp
 mount -o compress=zstd:1,noatime,subvol=@cache /dev/***?2 /mnt/var/cache/pacman/pkg
 mount -o compress=zstd:1,noatime,subvol=@log /dev/***?2 /mnt/var/log
 mount -o compress=zstd:1,noatime,subvol=@flatpak /dev/***?2 /mnt/var/lib/flatpak
-mount -o compress=zstd:1,noatime,subvol=@vm /dev/***?2 /mnt/var/lib/libvrt/images
+mount -o compress=zstd:1,noatime,subvol=@vm /dev/***?2 /mnt/var/lib/libvirt/images
 
 mount /dev/***?1 /mnt/boot
 ```

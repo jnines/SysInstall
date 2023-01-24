@@ -39,6 +39,8 @@ pipewire-pulse
 python-musicbrainzngs
 qt-gstreamer
 quodlibet
+realtime-privileges
+rtkit
 shotcut
 simplescreenrecorder
 smplayer

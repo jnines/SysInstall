@@ -33,11 +33,11 @@ cfdisk
 
 ```zsh
 mkfs.vfat -n BOOT /dev/***?1
-mkfs.btrfs -L ROOT /dev/***?2
-mkswap -L SWAP /dev/***?3
+mkswap -L SWAP /dev/***?2
+mkfs.btrfs -L ROOT /dev/***?3
 
-mount /dev/***?2 /mnt
-swapon /dev/***?3
+mount /dev/***?3 /mnt
+swapon /dev/***?2
 
 cd /mnt &&
 btrfs su cr @ &&
@@ -49,21 +49,23 @@ btrfs su cr @cache &&
 btrfs su cr @log &&
 btrfs su cr @flatpak &&
 btrfs su cr @vm &&
+btrfs su cr @docker &&
 cd / &&
 umount /mnt
 
-mount -o compress=zstd:1,noatime,subvol=@ /dev/***?2 /mnt
+mount -o compress=zstd:1,noatime,subvol=@ /dev/***?3 /mnt
 
 mkdir -p /mnt/{/boot,/home,/root,/.snapshots,/opt/games,/var/cache/pacman/pkg,/var/log,/var/lib/flatpak,/var/lib/libvrt/images}
 
-mount -o compress=zstd:1,noatime,subvol=@home /dev/***?2 /mnt/home
-mount -o compress=zstd:1,noatime,subvol=@root /dev/***?2 /mnt/root
-mount -o compress=zstd:1,noatime,subvol=@snapshots /dev/***?2 /mnt/.snapshots
-mount -o compress=zstd:1,noatime,subvol=@games /dev/***?2 /mnt/opt/games
-mount -o compress=zstd:1,noatime,subvol=@cache /dev/***?2 /mnt/var/cache/pacman/pkg
-mount -o compress=zstd:1,noatime,subvol=@log /dev/***?2 /mnt/var/log
-mount -o compress=zstd:1,noatime,subvol=@flatpak /dev/***?2 /mnt/var/lib/flatpak
-mount -o compress=zstd:1,noatime,subvol=@vm /dev/***?2 /mnt/var/lib/libvirt/images
+mount -o compress=zstd:1,noatime,subvol=@home /dev/***?3 /mnt/home
+mount -o compress=zstd:1,noatime,subvol=@root /dev/***?3 /mnt/root
+mount -o compress=zstd:1,noatime,subvol=@snapshots /dev/***?3 /mnt/.snapshots
+mount -o compress=zstd:1,noatime,subvol=@games /dev/***?3 /mnt/opt/games
+mount -o compress=zstd:1,noatime,subvol=@cache /dev/***?3 /mnt/var/cache/pacman/pkg
+mount -o compress=zstd:1,noatime,subvol=@log /dev/***?3 /mnt/var/log
+mount -o compress=zstd:1,noatime,subvol=@flatpak /dev/***?3 /mnt/var/lib/flatpak
+mount -o compress=zstd:1,noatime,subvol=@vm /dev/***?3 /mnt/var/lib/libvirt/images
+mount -o compress=zstd:1,noatime,subvol=@docker /dev/***?3 /mnt/var/lib/docker
 
 mount /dev/***?1 /mnt/boot
 ```

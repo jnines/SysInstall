@@ -57,15 +57,15 @@ mount -o compress=zstd:1,noatime,subvol=@ /dev/***?3 /mnt
 
 mkdir -p /mnt/{/boot,/home,/root,/.snapshots,/opt/games,/var/cache/pacman/pkg,/var/log,/var/lib/flatpak,/var/lib/libvrt/images}
 
-mount -o compress=zstd:1,noatime,subvol=@home /dev/***?3 /mnt/home
-mount -o compress=zstd:1,noatime,subvol=@root /dev/***?3 /mnt/root
-mount -o compress=zstd:1,noatime,subvol=@snapshots /dev/***?3 /mnt/.snapshots
-mount -o compress=zstd:1,noatime,subvol=@games /dev/***?3 /mnt/opt/games
-mount -o compress=zstd:1,noatime,subvol=@cache /dev/***?3 /mnt/var/cache/pacman/pkg
-mount -o compress=zstd:1,noatime,subvol=@log /dev/***?3 /mnt/var/log
-mount -o compress=zstd:1,noatime,subvol=@flatpak /dev/***?3 /mnt/var/lib/flatpak
-mount -o compress=zstd:1,noatime,subvol=@vm /dev/***?3 /mnt/var/lib/libvirt/images
-mount -o compress=zstd:1,noatime,subvol=@docker /dev/***?3 /mnt/var/lib/docker
+mount -o compress=zstd:1,noatime,nodiscard,subvol=@home /dev/***?3 /mnt/home
+mount -o compress=zstd:1,noatime,nodiscard,subvol=@root /dev/***?3 /mnt/root
+mount -o compress=zstd:1,noatime,nodiscard,subvol=@snapshots /dev/***?3 /mnt/.snapshots
+mount -o compress=zstd:1,noatime,nodiscard,subvol=@games /dev/***?3 /mnt/opt/games
+mount -o compress=zstd:1,noatime,nodiscard,subvol=@cache /dev/***?3 /mnt/var/cache/pacman/pkg
+mount -o compress=zstd:1,noatime,nodiscard,subvol=@log /dev/***?3 /mnt/var/log
+mount -o compress=zstd:1,noatime,nodiscard,subvol=@flatpak /dev/***?3 /mnt/var/lib/flatpak
+mount -o compress=zstd:1,noatime,nodiscard,subvol=@vm /dev/***?3 /mnt/var/lib/libvirt/images
+mount -o compress=zstd:1,noatime,nodiscard,subvol=@docker /dev/***?3 /mnt/var/lib/docker
 
 mount /dev/***?1 /mnt/boot
 ```

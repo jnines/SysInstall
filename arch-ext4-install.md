@@ -144,6 +144,11 @@ git clone https://github.com/Frogging-Family/linux-tkg.git $HOME/.local/bin/git/
 git clone https://github.com/Frogging-Family/nvidia-all.git $HOME/.local/bin/git/tkg/nvidia-all
 ```
 
+## KDE
+
+[Event Calendar](https://store.kde.org/p/998901/)
+[Fancy Tasks](https://store.kde.org/p/1928026/)
+
 [Wine](https://github.com/Frogging-Family/wine-tkg-git/actions/workflows/wine-arch.yml)  
 [SF Pro font](https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts)  
 [SauceCode Pro font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf)

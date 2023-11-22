@@ -1,4 +1,3 @@
-code-minimap-bin
-pnpm
+golangci-lint
 vale-bin
 visual-studio-code-bin

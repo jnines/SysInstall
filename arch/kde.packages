@@ -6,9 +6,9 @@ ffmpegthumbs
 filelight
 kaccounts-integration
 kcalc
-kdialog
 kde-gtk-config
 kdeplasma-addons
+kdialog
 kfind
 kgamma5
 khotkeys
@@ -28,8 +28,8 @@ plasma-desktop
 plasma-disks
 plasma-nm
 plasma-pa
-plasma-vault
 plasma-systemmonitor
+plasma-vault
 plasma-wayland-protocols
 plasma-wayland-session
 powerdevil
@@ -37,13 +37,15 @@ print-manager
 sddm
 sddm-kcm
 spectacle
+systray-x-kde
 xclip
 xdg-desktop-portal-kde
 xdotool
 xorg-server
 xorg-server-devel
 xorg-util-macros
-xorg-xwayland
 xorg-xev
 xorg-xhost
 xorg-xinit
+xorg-xinput
+xorg-xwayland

@@ -125,7 +125,6 @@ timeout 3
 resolution 2560 1440 # Pick your resolution
 use_graphics_for linux
 scanfor manual
-dont_scan_volumes "Recovery HD",Data,Win,Home,Root,1TB,"Microsoft reserved partition"
 fold_linux_kernels false
 default_selection "Arch"
 
@@ -134,7 +133,7 @@ menuentry "Arch" {
     icon     /EFI/refind/icons/os_arch.png
     loader   /vmlinuz-linux
     initrd   /initramfs-linux.img
-    options  "root=PARTUUID=***PARTUUID_OF_ROOT*** rw rootflags=subvol=@ nouveau.modeset=0 processor.max_cstate=5 initrd=amd-ucode.img"
+    options  "root=PARTUUID=***PARTUUID_OF_ROOT*** rw rootflags=subvol=@ initrd=amd-ucode.img rcu_nocbs=0-15 acpi_enforce_resources=lax nowatchdog nvidia-drm.modeset=1 amd_pstate=guided"
     submenuentry "Boot to terminal" {
         add_options "systemd.unit=multi-user.target"
     }

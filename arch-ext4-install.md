@@ -144,9 +144,9 @@ git clone https://github.com/Frogging-Family/linux-tkg.git $HOME/.local/bin/git/
 git clone https://github.com/Frogging-Family/nvidia-all.git $HOME/.local/bin/git/tkg/nvidia-all
 ```
 
-## KDE
+### KDE
 
-[Event Calendar](https://store.kde.org/p/998901/)
+[Event Calendar](https://store.kde.org/p/998901/)  
 [Fancy Tasks](https://store.kde.org/p/1928026/)
 
 [Wine](https://github.com/Frogging-Family/wine-tkg-git/actions/workflows/wine-arch.yml)  

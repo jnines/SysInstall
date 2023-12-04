@@ -121,6 +121,11 @@ reboot
 ### Post install
 
 ```zsh
+sudo dd if=/dev/zero of=/swapfile bs=1M count=8k status=progress &&
+sudo chmod 600 /swapfile &&
+sudo mkswap -U clear /swapfile &&
+sudo swapon /swapfile &&
+echo "/swapfile    none    swap    defaults    0  0" | sudo tee -a /etc/fstab &&
 mkdir -p $HOME/.local/bin/git &&
 git clone https://aur.archlinux.org/yay-bin.git $HOME/.local/bin/git/yay-bin &&
 (cd $HOME/.local/bin/git/yay-bin && makepkg -si) &&

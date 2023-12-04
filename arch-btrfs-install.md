@@ -92,7 +92,7 @@ echo 'archbox' > /etc/hostname &&
 echo "127.0.0.1   localhost
 ::1         localhost
 127.0.1.1   archbox.lan archbox" >> /etc/hosts &&
-sed -i \                                                                                                                                                                        Latest Stable: v6.6.4  7:31PM
+sed -i \
 -e '/Color/s/^#//' \
 -e '/VerbosePkgLists/s/^#//' \
 -e '/ParallelDownloads/s/^#//' \

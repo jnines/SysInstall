@@ -36,7 +36,7 @@ mkfs.ext4 -L ROOT /dev/***?2
 
 mount /dev/***?2 /mnt
 mkdir /mnt/boot
-mount /dev/***?1 /boot
+mount /dev/***?1 /mnt/boot
 ```
 
 ### Pacstrap

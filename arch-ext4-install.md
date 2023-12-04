@@ -57,26 +57,23 @@ reflector --country US --latest 5 --sort rate --save /etc/pacman.d/mirrorlist &&
 echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen &&
 locale-gen &&
 echo 'LANG=en_US.UTF-8' > /etc/locale.conf &&
-echo 'archt' > /etc/hostname &&
+echo 'archbox' > /etc/hostname &&
 echo "127.0.0.1   localhost
 ::1         localhost
 127.0.1.1   archbox.lan archbox" >> /etc/hosts &&
+sed -i \                                                                                                                                                                        Latest Stable: v6.6.4  7:31PM
+-e '/Color/s/^#//' \
+-e '/VerbosePkgLists/s/^#//' \
+-e '/ParallelDownloads/s/^#//' \
+-e '/^#\[multilib]/{N;s/\n#/\n/}' \
+-e '/\[multilib]/s/^#//' \
+-e 's/#NoExtract.*/NoExtract = usr\/lib\/security\/pam_systemd_home.so/' \
+-e '/ParallelDownloads/a ILoveCandy' \
+/etc/pacman.conf &&
 passwd &&
-nvim /etc/pacman.conf &&
 pacman -Syy &&
 cd /remove/arch || exit
 ```
-
-- Change in pacman.conf
-  > NoExtract=usr/lib/security/pam_systemd_home.so
-- Uncomment
-  > Color
-  > CheckSpace
-  > VerbosePkgLists
-  > ParallelDownloads
-  > ILoveCandy
-  > [multilib]
-  > Include = /etc/pacman.d/mirrorlist
 
 `pacman -S --needed - <`
 PackageLists from /remove/arch/
@@ -149,6 +146,7 @@ git clone https://github.com/Frogging-Family/nvidia-all.git $HOME/.local/bin/git
 [Event Calendar](https://store.kde.org/p/998901/)  
 [Fancy Tasks](https://store.kde.org/p/1928026/)
 
-[Wine](https://github.com/Frogging-Family/wine-tkg-git/actions/workflows/wine-arch.yml)  
+### Extra fonts
+
 [SF Pro font](https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts)  
 [SauceCode Pro font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf)

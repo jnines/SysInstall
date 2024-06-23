@@ -3,8 +3,6 @@ docker
 docker-compose
 eslint
 fd
-flake8
-gofumpt
 hq
 lazygit
 luacheck
@@ -14,10 +12,8 @@ nodejs
 php
 pnpm
 prettier
-pyright
-python-black
-python-isort
 python-pip
+python-pynvim
 rust
 rust-analyzer
 shellcheck
@@ -25,4 +21,3 @@ shfmt
 stylua
 texinfo
 xmlstarlet
-yamllint

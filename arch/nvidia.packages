@@ -1,4 +1,5 @@
 libva-utils
+libva-nvidia-driver
 libxnvctrl
 nvidia-dkms
 nvidia-settings

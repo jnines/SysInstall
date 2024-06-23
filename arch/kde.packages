@@ -2,6 +2,7 @@ bluedevil
 breeze-gtk
 colord-kde
 dolphin
+drkonqi
 ffmpegthumbs
 filelight
 kaccounts-integration
@@ -10,14 +11,15 @@ kde-gtk-config
 kdeplasma-addons
 kdialog
 kfind
-kgamma5
 khotkeys
 kimageformats5
 kinfocenter
 konsole
+kruler
 kscreen
 ksshaskpass
 ksysguard
+kwalletmanager
 kwallet-pam
 okteta
 okular
@@ -38,6 +40,7 @@ sddm
 sddm-kcm
 spectacle
 systray-x-kde
+wl-clipboard
 xclip
 xdg-desktop-portal-kde
 xdotool
@@ -45,6 +48,7 @@ xorg-server
 xorg-server-devel
 xorg-util-macros
 xorg-xev
+xorg-xgamma
 xorg-xhost
 xorg-xinit
 xorg-xinput

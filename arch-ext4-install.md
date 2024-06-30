@@ -79,6 +79,9 @@ sed -i \
 -e '/-account.*/s/^/#/' \
 -e '/-session.*/s/^/#/' \
 /etc/pam.d/system-auth &&
+sed -i \
+-e '/\[Manager\]/aDefaultLimitNOFILE=524288\nDefaultTimeoutStopSec=20s' \
+/etc/systemd/system.conf &&
 passwd &&
 pacman -Syy &&
 cd /remove/arch || exit

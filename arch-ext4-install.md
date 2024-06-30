@@ -70,6 +70,10 @@ sed -i \
 -e 's/#NoExtract.*/NoExtract = usr\/lib\/security\/pam_systemd_home.so/' \
 -e '/ParallelDownloads/a ILoveCandy' \
 /etc/pacman.conf &&
+sed -i \
+-e 's/#MAKEFLAGS.*/'MAKEFLAGS="-j\$(( \$(nproc) - 2 ))"'/' \
+-e '/#BUILDDIR.*/s/^#//' \
+/etc/makepkg.conf &&
 passwd &&
 pacman -Syy &&
 cd /remove/arch || exit

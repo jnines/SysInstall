@@ -82,6 +82,9 @@ sed -i \
 sed -i \
 -e '/\[Manager\]/aDefaultLimitNOFILE=524288\nDefaultTimeoutStopSec=20s' \
 /etc/systemd/system.conf &&
+sed -i \
+-e '/\[Manager\]/aDefaultLimitNOFILE=524288' \
+user.conf &&
 passwd &&
 pacman -Syy &&
 cd /remove/arch || exit

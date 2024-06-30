@@ -74,7 +74,8 @@ sed -i \
 -e 's/#MAKEFLAGS.*/'MAKEFLAGS="-j\$(( \$(nproc) - 2 ))"'/' \
 -e '/#BUILDDIR.*/s/^#//' \
 /etc/makepkg.conf &&
-sed -i -e '/-auth.*/s/^/#/' \
+sed -i \
+-e '/-auth.*/s/^/#/' \
 -e '/-account.*/s/^/#/' \
 -e '/-session.*/s/^/#/' \
 /etc/pam.d/system-auth &&

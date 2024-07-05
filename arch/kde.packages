@@ -40,6 +40,7 @@ sddm
 sddm-kcm
 spectacle
 systray-x-kde
+wev
 wl-clipboard
 xclip
 xdg-desktop-portal-kde
@@ -53,3 +54,4 @@ xorg-xhost
 xorg-xinit
 xorg-xinput
 xorg-xwayland
+ydotool

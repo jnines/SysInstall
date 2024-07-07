@@ -236,6 +236,7 @@ git clone https://github.com/Frogging-Family/nvidia-all.git $HOME/.local/bin/git
 [Event Calendar](https://store.kde.org/p/998901/)  
 [Fancy Tasks](https://store.kde.org/p/1928026/)
 [Kargos](https://github.com/sanniou/kargos6)
+[Transparency Panel](https://github.com/TheEssem/paneltransparencybutton)
 
 ### Extra fonts
 

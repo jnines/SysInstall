@@ -63,6 +63,7 @@ p7zip
 pacman-contrib
 pacutils
 perf
+profile-cleaner
 psensor
 read-edid
 rebuild-detector

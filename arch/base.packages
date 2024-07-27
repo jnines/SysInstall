@@ -25,6 +25,7 @@ expac
 extra-cmake-modules
 eza
 fakeroot
+fastfetch
 fuseiso
 fzf
 gnu-netcat
@@ -55,7 +56,6 @@ mlocate
 mtools
 nano
 ncdu
-neofetch
 neovim
 ntfs-3g
 nvme-cli

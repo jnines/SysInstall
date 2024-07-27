@@ -24,7 +24,6 @@ nm-connection-editor
 nmap
 nss-mdns
 openssh
-profile-sync-daemon
 python-websockets
 rsync
 samba

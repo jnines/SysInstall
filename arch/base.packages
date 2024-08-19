@@ -48,6 +48,7 @@ linux
 linux-firmware
 linux-headers
 logrotate
+lostfiles
 lshw
 man-db
 man-pages

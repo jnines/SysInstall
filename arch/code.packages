@@ -14,6 +14,7 @@ pnpm
 prettier
 python-pip
 python-pynvim
+qt6-languageserver
 rust
 rust-analyzer
 shellcheck

@@ -42,7 +42,6 @@ logrotate
 lshw
 man-db
 man-pages
-mlocate
 mtools
 nano
 ncdu
@@ -53,6 +52,7 @@ openssh
 p7zip
 pacman-contrib
 pacutils
+plocate
 python-pynvim
 rebuild-detector
 refind

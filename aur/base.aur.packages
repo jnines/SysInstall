@@ -1,4 +1,5 @@
-coolercontrol
+coolercontrol-bin
+coolercontrold-bin
 disable-c6-systemd
 downgrade
 it87-dkms-git

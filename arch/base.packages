@@ -7,6 +7,7 @@ base
 bash-completion
 bat
 bison
+btop
 btrfs-progs
 ccache
 cdrtools
@@ -33,7 +34,6 @@ gvfs
 gzip
 hddtemp
 hdparm
-htop
 i2c-tools
 inotify-tools
 inxi

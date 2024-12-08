@@ -3,6 +3,7 @@ docker
 docker-compose
 eslint
 fd
+go
 hq
 lazygit
 luacheck

@@ -20,7 +20,6 @@ kscreen
 ksshaskpass
 kwalletmanager
 kwallet-pam
-okteta
 okular
 oxygen
 papirus-icon-theme
@@ -41,6 +40,5 @@ spectacle
 wev
 wl-clipboard
 xdg-desktop-portal-kde
-xdotool
 xorg-xwayland
 ydotool

@@ -8,7 +8,6 @@ audacity
 cameractrls
 cheese
 easyeffects
-faudio
 ffmpeg
 ffmpeg4.4
 flac
@@ -24,7 +23,6 @@ guvcview
 imagemagick
 inkscape
 kate
-lib32-faudio
 libkeybinder3
 libreoffice-still
 lsp-plugins
@@ -44,7 +42,6 @@ pipewire-docs
 pipewire-jack
 pipewire-pulse
 python-musicbrainzngs
-qt-gstreamer
 realtime-privileges
 rtkit
 shotcut

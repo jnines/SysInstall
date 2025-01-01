@@ -165,6 +165,7 @@ git clone https://github.com/Frogging-Family/nvidia-all.git $HOME/.local/bin/git
 
 [Kargos](https://github.com/sanniou/kargos6)
 [Transparency Panel](https://github.com/TheEssem/paneltransparencybutton)
+[BreezeX Cursors](https://github.com/ful1e5/BreezeX_Cursor)
 
 ### Extra fonts
 

@@ -224,6 +224,23 @@ exit
 ```
 
 ```zsh
+cat <<EOF > /etc/systemd/zram-generator.conf
+[zram0]
+zram-size = min(ram / 4, 6144)
+compression-algorithim = zstd
+EOF
+
+cat <<EOF > /etc/sysctl.d/99-sysctl.conf
+kernel.sysrq = 1
+fs.inotify.max_user_watches=524288
+vm.swappiness=180
+vm.watermark_boost_factor = 0
+vm.watermark_scale_factor = 125
+vm.page-cluster = 0
+EOF
+```
+
+```zsh
 mkdir -p $HOME/.local/bin/git/tkg &&
 git clone --separate-git-dir="$HOME"/.local/bin/git/dotfiles https://github.com/jnines/dotfiles.git "$HOME"/.local/bin/git/dotf &&
 git clone https://github.com/jnines/nvim $HOME/.config/nvim &&

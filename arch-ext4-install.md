@@ -140,7 +140,23 @@ sudo dd if=/dev/zero of=/swapfile bs=1M count=8k status=progress &&
 sudo chmod 600 /swapfile &&
 sudo mkswap -U clear /swapfile &&
 sudo swapon /swapfile &&
-echo "/swapfile    none    swap    defaults    0  0" | sudo tee -a /etc/fstab &&
+echo "/swapfile    none    swap    defaults,pri=2    0  0" | sudo tee -a /etc/fstab &&
+
+cat <<EOF > /etc/systemd/zram-generator.conf
+[zram0]
+zram-size = min(ram / 4, 6144)
+compression-algorithim = zstd
+EOF
+
+cat <<EOF > /etc/sysctl.d/99-sysctl.conf
+kernel.sysrq = 1
+fs.inotify.max_user_watches=524288
+vm.swappiness=180
+vm.watermark_boost_factor = 0
+vm.watermark_scale_factor = 125
+vm.page-cluster = 0
+EOF
+
 mkdir -p $HOME/.local/bin/git &&
 git clone https://aur.archlinux.org/yay-bin.git $HOME/.local/bin/git/yay-bin &&
 (cd $HOME/.local/bin/git/yay-bin && makepkg -si) &&

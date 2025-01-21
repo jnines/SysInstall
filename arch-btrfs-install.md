@@ -157,7 +157,7 @@ menuentry "Arch" {
 
 ```zsh
 mkinitcpio -p linux &&
-useradd -mg users -G wheel -s /bin/zsh jason &&
+useradd -mg users -G wheel,rtkit,input -s /bin/zsh jason &&
 passwd jason &&
 export EDITOR=nvim &&
 visudo &&

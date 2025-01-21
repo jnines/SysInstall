@@ -125,7 +125,7 @@ useradd -mg users -G wheel,rtkit,input -s /bin/zsh jason &&
 passwd jason &&
 export EDITOR=nvim &&
 visudo &&
-systemctl enable NetworkManager bluetooth sddm rngd fstrim.timer updatedb.timer cups cronie avahi-daemon.service logrotate.timer paccache.timer &&
+systemctl enable NetworkManager bluetooth sddm rngd fstrim.timer plocate-updatedb.timer cups cronie avahi-daemon.service logrotate.timer paccache.timer &&
 exit
 
 umount -a &&

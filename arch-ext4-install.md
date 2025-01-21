@@ -84,7 +84,7 @@ sed -i \
 /etc/systemd/system.conf &&
 sed -i \
 -e '/\[Manager\]/aDefaultLimitNOFILE=524288' \
-user.conf &&
+/etc/systemd/user.conf &&
 passwd &&
 pacman -Syy &&
 cd /remove/arch || exit

@@ -12,6 +12,7 @@ curl
 dhcpcd
 ethtool
 firefox
+freerdp
 hunspell-en_us
 iftop
 inetutils

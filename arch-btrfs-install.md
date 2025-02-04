@@ -172,12 +172,12 @@ reboot
 
 ```zsh
 mkdir -p $HOME/.local/bin/git &&
-git clone https://aur.archlinux.org/yay-bin.git $HOME/.local/bin/git/yay-bin &&
-(cd $HOME/.local/bin/git/yay-bin && makepkg -si) &&
+git clone https://aur.archlinux.org/paru-bin.git $HOME/.local/bin/git/paru-bin &&
+(cd $HOME/.local/bin/git/paru-bin && makepkg -si) &&
 cd /remove/aur
 ```
 
-`yay -S - <` #PackageLists from /remove/aur/
+`paru -S - <` #PackageLists from /remove/aur/
 
 ```zsh
 sudo su

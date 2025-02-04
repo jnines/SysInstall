@@ -169,11 +169,13 @@ sudo rm -r /remove &&
 ```
 
 ```zsh
-mkdir -p $HOME/.local/bin/git/tkg &&
 git clone --separate-git-dir="$HOME"/.local/bin/git/dotfiles https://github.com/jnines/dotfiles.git "$HOME"/.local/bin/git/dotf &&
 git clone https://github.com/jnines/nvim $HOME/.config/nvim &&
-git clone https://github.com/Frogging-Family/linux-tkg.git $HOME/.local/bin/git/tkg/linux-tkg &&
-git clone https://github.com/Frogging-Family/nvidia-all.git $HOME/.local/bin/git/tkg/nvidia-all
+git clone https://github.com/CachyOS/linux-cachyos.git $HOME/.local/bin/git/linux-cachyos &&
+git init $HOME/.local/bin/git/nvidia-cachyos && cd $HOME/.local/bin/git/nvidia-cachyos &&
+git remote add -f origin https://github.com/CachyOS/CachyOS-PKGBUILDS &&
+git config core.sparseCheckout true && echo "nvidia" >> .git/info/sparse-checkout &&
+git pull origin master
 ```
 
 ### KDE

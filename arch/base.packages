@@ -27,6 +27,7 @@ extra-cmake-modules
 eza
 fakeroot
 fastfetch
+flatpak
 fuseiso
 fzf
 ghostty

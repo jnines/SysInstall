@@ -23,7 +23,7 @@ pacman -Syy
 ## Format
 
 ```zsh
-lsblk -o name,fssize,fstype,mountpoint,uuid,model
+lsblk -o name,fssize,fstype,mountpoint,uuid,partuuid,model
 cfdisk
 ```
 
@@ -31,12 +31,15 @@ cfdisk
 - / partition remaining
 
 ```zsh
-mkfs.vfat -n BOOT /dev/***?1
-mkfs.ext4 -L ROOT /dev/***?2
+lsblk -o name,fssize,fstype,mountpoint,uuid,partuuid,model
+boot_part=**
+root_part=**
+mkfs.vfat -n BOOT /dev/${boot_part}
+mkfs.ext4 -L ROOT /dev/${root_part}
 
-mount /dev/***?2 /mnt
+mount /dev/${root_part} /mnt
 mkdir /mnt/boot
-mount /dev/***?1 /mnt/boot
+mount /dev/${boot_part} /mnt/boot
 ```
 
 ### Pacstrap

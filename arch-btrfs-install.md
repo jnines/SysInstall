@@ -23,21 +23,21 @@ pacman -Syy
 ## Format
 
 ```zsh
-lsblk -o name,fssize,fstype,mountpoint,uuid,model
+lsblk -o name,fssize,fstype,mountpoint,uuid,partuuid,model
 cfdisk
 ```
 
 - EFI partition 500MB - 2GB
-- / partition remaining -8GB
-- SWAP 8GB Unless using ZRAM
+- / partition remaining
 
 ```zsh
-mkfs.vfat -n BOOT /dev/***?1
-mkswap -L SWAP /dev/***?2
-mkfs.btrfs -L ROOT /dev/***?3
+lsblk -o name,fssize,fstype,mountpoint,uuid,partuuid,model
+boot_part=**
+root_part=**
+mkfs.vfat -n BOOT /dev/${boot_part}
+mkfs.btrfs -L ROOT /dev/${root_part}
 
-mount /dev/***?3 /mnt
-swapon /dev/***?2
+mount /dev/${root_part} /mnt
 
 cd /mnt &&
 btrfs su cr @ &&
@@ -53,21 +53,21 @@ btrfs su cr @docker &&
 cd / &&
 umount /mnt
 
-mount -o compress=zstd:1,noatime,subvol=@ /dev/***?3 /mnt
+mount -o compress=zstd:1,noatime,subvol=@ /dev/${root_part} /mnt
 
 mkdir -p /mnt/{/boot,/home,/root,/.snapshots,/opt/games,/var/cache/pacman/pkg,/var/log,/var/lib/flatpak,/var/lib/libvrt/images}
 
-mount -o compress=zstd:1,noatime,nodiscard,subvol=@home /dev/***?3 /mnt/home
-mount -o compress=zstd:1,noatime,nodiscard,subvol=@root /dev/***?3 /mnt/root
-mount -o compress=zstd:1,noatime,nodiscard,subvol=@snapshots /dev/***?3 /mnt/.snapshots
-mount -o compress=zstd:1,noatime,nodiscard,subvol=@games /dev/***?3 /mnt/opt/games
-mount -o compress=zstd:1,noatime,nodiscard,subvol=@cache /dev/***?3 /mnt/var/cache/pacman/pkg
-mount -o compress=zstd:1,noatime,nodiscard,subvol=@log /dev/***?3 /mnt/var/log
-mount -o compress=zstd:1,noatime,nodiscard,subvol=@flatpak /dev/***?3 /mnt/var/lib/flatpak
-mount -o compress=zstd:1,noatime,nodiscard,subvol=@vm /dev/***?3 /mnt/var/lib/libvirt/images
-mount -o compress=zstd:1,noatime,nodiscard,subvol=@docker /dev/***?3 /mnt/var/lib/docker
+mount -o compress=zstd:1,noatime,nodiscard,subvol=@home /dev/${root_part} /mnt/home
+mount -o compress=zstd:1,noatime,nodiscard,subvol=@root /dev/${root_part} /mnt/root
+mount -o compress=zstd:1,noatime,nodiscard,subvol=@snapshots /dev/${root_part} /mnt/.snapshots
+mount -o compress=zstd:1,noatime,nodiscard,subvol=@games /dev/${root_part} /mnt/opt/games
+mount -o compress=zstd:1,noatime,nodiscard,subvol=@cache /dev/${root_part} /mnt/var/cache/pacman/pkg
+mount -o compress=zstd:1,noatime,nodiscard,subvol=@log /dev/${root_part} /mnt/var/log
+mount -o compress=zstd:1,noatime,nodiscard,subvol=@flatpak /dev/${root_part} /mnt/var/lib/flatpak
+mount -o compress=zstd:1,noatime,nodiscard,subvol=@vm /dev/${root_part} /mnt/var/lib/libvirt/images
+mount -o compress=zstd:1,noatime,nodiscard,subvol=@docker /dev/${root_part} /mnt/var/lib/docker
 
-mount /dev/***?1 /mnt/boot
+mount /dev/${boot_part} /mnt/boot
 ```
 
 ## Pacstrap

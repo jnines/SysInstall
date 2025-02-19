@@ -1,8 +1,6 @@
 coolercontrol-bin
 coolercontrold-bin
-disable-c6-systemd
 downgrade
-it87-dkms-git
 modprobed-db
 openrgb
 qimgv
@@ -12,4 +10,3 @@ smem
 tmuxinator
 ttf-ms-fonts
 ttf-vista-fonts
-zenstates-git

@@ -128,7 +128,7 @@ menuentry "Arch" {
 > MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
 
 ```zsh
-useradd -mg users -G wheel,rtkit,input -s /bin/zsh jason &&
+useradd -mg users -G wheel,users,rtkit,realtime,libvirt,gamemode,docker,input -s /bin/zsh jason &&
 passwd jason &&
 export EDITOR=nvim &&
 visudo &&

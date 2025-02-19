@@ -55,7 +55,7 @@ umount /mnt
 
 mount -o compress=zstd:1,noatime,subvol=@ /dev/${root_part} /mnt
 
-mkdir -p /mnt/{/boot,/home,/root,/.snapshots,/opt/games,/var/cache/pacman/pkg,/var/log,/var/lib/flatpak,/var/lib/libvrt/images}
+mkdir -p /mnt/{/boot,/home,/root,/.snapshots,/opt/games,/var/cache/pacman/pkg,/var/log,/var/lib/flatpak,/var/lib/libivrt/images,/var/lib/docker}
 
 mount -o compress=zstd:1,noatime,nodiscard,subvol=@home /dev/${root_part} /mnt/home
 mount -o compress=zstd:1,noatime,nodiscard,subvol=@root /dev/${root_part} /mnt/root

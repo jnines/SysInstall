@@ -123,6 +123,10 @@ menuentry "Arch" {
 }
 ```
 
+`nvim /etc/mkinitcpio.conf`
+
+> MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
+
 ```zsh
 useradd -mg users -G wheel,rtkit,input -s /bin/zsh jason &&
 passwd jason &&

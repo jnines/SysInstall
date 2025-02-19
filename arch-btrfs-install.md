@@ -154,6 +154,7 @@ menuentry "Arch" {
 `nvim /etc/mkinitcpio.conf`
 
 > MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
+>
 > BINARIES=(btrfs)
 
 ```zsh

@@ -259,5 +259,4 @@ git pull origin master
 
 ### Extra fonts
 
-[SF Pro font](https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts)  
-[SauceCode Pro font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf)
+[SF Pro font](https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts)

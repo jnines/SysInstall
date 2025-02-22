@@ -34,7 +34,6 @@ inotify-tools
 jq
 keychain
 less
-lf
 linux
 linux-firmware
 linux-headers

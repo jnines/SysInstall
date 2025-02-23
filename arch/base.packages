@@ -77,7 +77,7 @@ rng-tools
 schedtool
 smartmontools
 sshfs
-stress
+stress-ng
 time
 tldr
 tmux

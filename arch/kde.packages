@@ -40,5 +40,6 @@ spectacle
 wev
 wl-clipboard
 xdg-desktop-portal-kde
+xdg-desktop-portal-gtk
 xorg-xwayland
 ydotool

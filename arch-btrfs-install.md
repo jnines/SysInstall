@@ -144,7 +144,7 @@ menuentry "Arch" {
     icon     /EFI/refind/icons/os_arch.png
     loader   /vmlinuz-linux
     initrd   /initramfs-linux.img
-    options  "root=PARTUUID=***PARTUUID_OF_ROOT*** rw rootflags=subvol=@ initrd=amd-ucode.img rcu_nocbs=0-15 acpi_enforce_resources=lax nowatchdog nvidia-drm.modeset=1 amd_pstate=guided"
+    options  "root=PARTUUID=***PARTUUID_OF_ROOT*** rw rootflags=subvol=@ initrd=amd-ucode.img nowatchdog amd_pstate=guided split_lock_detect=off fbcon=font:VGA8x16
     submenuentry "Boot to terminal" {
         add_options "systemd.unit=multi-user.target"
     }
@@ -153,8 +153,6 @@ menuentry "Arch" {
 
 `nvim /etc/mkinitcpio.conf`
 
-> MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
->
 > BINARIES=(btrfs)
 
 ```zsh
@@ -243,17 +241,11 @@ EOF
 
 ```zsh
 git clone --separate-git-dir="$HOME"/.local/bin/git/dotfiles https://github.com/jnines/dotfiles.git "$HOME"/.local/bin/git/dotf &&
-git clone https://github.com/jnines/nvim $HOME/.config/nvim &&
-git clone https://github.com/CachyOS/linux-cachyos.git $HOME/.local/bin/git/linux-cachyos &&
-git init $HOME/.local/bin/git/nvidia-cachyos && cd $HOME/.local/bin/git/nvidia-cachyos &&
-git remote add -f origin https://github.com/CachyOS/CachyOS-PKGBUILDS &&
-git config core.sparseCheckout true && echo "nvidia" >> .git/info/sparse-checkout &&
-git pull origin master
+git clone https://github.com/jnines/nvim $HOME/.config/nvim
 ```
 
 ### KDE
 
-[Kargos](https://github.com/sanniou/kargos6)
 [Transparency Panel](https://github.com/TheEssem/paneltransparencybutton)
 [BreezeX Cursors](https://github.com/ful1e5/BreezeX_Cursor)
 

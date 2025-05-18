@@ -176,7 +176,7 @@ sudo rm -r /remove &&
 ```zsh
 git clone --separate-git-dir="$HOME"/.local/bin/git/dotfiles https://github.com/jnines/dotfiles.git "$HOME"/.local/bin/git/dotf &&
 git clone https://github.com/jnines/nvim $HOME/.config/nvim
-
+```
 
 ### KDE
 
@@ -186,4 +186,7 @@ git clone https://github.com/jnines/nvim $HOME/.config/nvim
 ### Extra fonts
 
 [SF Pro font](https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts)
+
+```
+
 ```

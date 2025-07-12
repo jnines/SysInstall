@@ -248,6 +248,7 @@ git clone https://github.com/jnines/nvim $HOME/.config/nvim
 
 [Transparency Panel](https://github.com/TheEssem/paneltransparencybutton)
 [BreezeX Cursors](https://github.com/ful1e5/BreezeX_Cursor)
+[Rmuxinator](https://github.com/ethagnawl/rmuxinator)
 
 ### Extra fonts
 

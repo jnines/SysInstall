@@ -21,6 +21,7 @@ dmidecode
 e2fsprogs
 efibootmgr
 efitools
+evtest
 exfatprogs
 expac
 extra-cmake-modules

@@ -1,3 +1,4 @@
+cargo-update
 deno
 docker
 docker-compose
@@ -18,7 +19,6 @@ python-pynvim
 qt6-languageserver
 rust
 rust-analyzer
-shellcheck
 shfmt
 stylua
 texinfo

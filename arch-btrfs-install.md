@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD013 -->
+
 # BTRFS
 
 ## Basics
@@ -240,8 +242,7 @@ EOF
 ```
 
 ```zsh
-git clone --separate-git-dir="$HOME"/.local/bin/git/dotfiles https://github.com/jnines/dotfiles.git "$HOME"/.local/bin/git/dotf &&
-git clone https://github.com/jnines/nvim $HOME/.config/nvim
+curl -sL https://raw.githubusercontent.com/jnines/dotfiles/refs/heads/main/install.sh | sh
 ```
 
 ### KDE

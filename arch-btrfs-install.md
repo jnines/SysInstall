@@ -174,8 +174,8 @@ reboot
 
 ```zsh
 mkdir -p $HOME/.local/bin/git &&
-git clone https://aur.archlinux.org/paru-bin.git $HOME/.local/bin/git/paru-bin &&
-(cd $HOME/.local/bin/git/paru-bin && makepkg -si) &&
+git clone https://aur.archlinux.org/paru.git $HOME/git/paru-bin &&
+(cd $HOME/git/paru && makepkg -si) &&
 cd /remove/aur
 ```
 

@@ -163,9 +163,9 @@ vm.watermark_scale_factor = 125
 vm.page-cluster = 0
 EOF
 
-mkdir -p $HOME/.local/bin/git &&
-git clone https://aur.archlinux.org/packages/paru-bin.git $HOME/.local/bin/git/paru-bin &&
-(cd $HOME/.local/bin/git/paru-bin && makepkg -si) &&
+mkdir -p $HOME/git &&
+git clone https://aur.archlinux.org/paru.git $HOME/git/paru &&
+(cd $HOME/git/paru && makepkg -si) &&
 cd /remove/aur
 ```
 
